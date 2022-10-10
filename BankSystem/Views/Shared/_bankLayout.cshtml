@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @using System.Web.Optimization
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body background="~/Content/Images/1.jpg">
+    
+
+    <div class="l-nav">
+        <nav class="nav">
+            <ul>
+                <li class="nav-primary"><a href="@Url.Action("BankPage", "Home")"> Home  </a></li>
+                <li class="nav-primary"><a href="@Url.Action("Statement", "Home")">  Account Statement  </a></li>
+                <li class="nav-primary"><a href="@Url.Action("Transfer", "Home")"> Transfer  </a></li>
+                <li class="nav-primary"><a href="@Url.Action("Balance", "Home")">  Balance  </a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <form align="right" name="form1" method="post" action="log_out.php">
+        <label class="logoutLblPos">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-default">Sign Out</a>
+        </label>
+    </form>
+
+    <style>
+
+        
+
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .logoutLblPos {
+            position: fixed;
+            right: 10px;
+            top: 5px;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #F0F8FF;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: dodgerblue;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: white;
+                }
+
+
+
+
+        .nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 800;
+            display: block;
+            padding: 12px;
+        }
+
+        .nav .nav-primary {
+            opacity: 1;
+        }
+
+            .nav .nav-primary:hover {
+                opacity: 0.7;
+            }
+
+        .nav .nav-secondary {
+            opacity: 0.4;
+        }
+
+            .nav .nav-secondary:hover {
+                opacity: 0.7;
+            }
+    </style>
+
+    <div class="container body-content" style="padding-left : 70px">
+        @RenderBody()
+        <hr />
+        <footer>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

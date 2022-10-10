@@ -1,0 +1,38 @@
+﻿@model BankSystem.Models.login
+
+@{ ViewBag.Title = "BankPage";
+                Layout = "~/Views/Shared/_bankLayout.cshtml"; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Online Banking</title>
+</head>
+<body >
+
+    <h2>Welcome to Online Banking @TempData["Name"] </h2>
+    <div>
+        @if (TempData["balance"] != null)
+        {
+    <h3 style="font-weight:bolder">@Html.Label("Balance :")<h4 style="color:blue">@TempData["balance"]</h4></h3>
+        }
+        
+    </div>
+
+
+    <br /><br /><br /><br /><br />
+    <footer>
+    </footer>
+</body>
+</html>
+
+
+
+@if (TempData.ContainsKey("message"))
+{
+<script type="text/javascript">
+        alert('@TempData["message"]');
+</script>}
+
+
+
